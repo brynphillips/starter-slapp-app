@@ -38,50 +38,7 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 slapp
   .message('^(hi|hello|hey)$', ['direct_mention', 'direct_message'], (msg, text) => {
     msg
-      .say({  
-      attachments:[
-          {
-              text: "Help us save on food costs by letting us know what food you'll be needing.",
-              callback_id: "food",
-              color: "#3AA3E3",
-              attachment_type: "default",
-              actions: [
-                  {
-                      "name": "lunch only",
-                      "text": "Skipping lunch",
-                      "type": "button",
-                      "value": "lunch"
-                  },
-                  {
-                      "name": "gather only",
-                      "text": "Skipping Gather Hour",
-                      "type": "button",
-                      "value": "gather"
-                  },
-                  {
-                      "name": "breakfast only",
-                      "text": "Skipping Breakfast",
-                      "type": "button",
-                      "value": "breakfast"
-                  },
-                  {
-                      "name": "gather_lunch",
-                      "text": "Feed me all!",
-                      "style": "primary",
-                      "type": "button",
-                      "value": "both"
-                  },
-                  {
-                      "name": "skipping",
-                      "text": "Skipping all!",
-                      "style": "danger",
-                      "type": "button",
-                      "value": "skipping"
-                  }
-              ]
-          }
-      ]
-  };`)
+      .say(`${text}, how are you?`)
       // sends next event from user to this route, passing along state
       .route('how-are-you', { greeting: text })
   })
